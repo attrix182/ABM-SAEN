@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Listado</h1>
+
+  <input [(ngModel)]="searchParam" (ngModelChange)="hacerBusqueda()" type="text" placeholder="Buscador" class="form-control mb-2">
+
+  <table border=1 class="table table-dark">
+    <thead>
+
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Cantidad</th>
+ 
+
+      <th>
+        <div *ngIf="!items.length">
+          <div class="spinner-border" role="status"></div>
+        </div>
+      </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let uno of items[0]">
+        <td>{{uno.id}}</td>
+        <td>{{uno.nombre}}</td>
+        <td>{{uno.descripcion}}</td>
+        <td>{{uno.cantidad}}</td>
+        <td> <button class="btn btn-info"> <i class=" fa fa-pencil "></i> </button></td>
+        <td> <button  (click)="deleteItem(uno)" class="btn btn-danger"> <i class="fa fa-trash "></i> </button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

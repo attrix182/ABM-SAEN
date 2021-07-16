@@ -1,0 +1,60 @@
+<body>
+  <div class="container">
+    <div>
+      <form [formGroup]="forma">
+        <div class="row">
+          <div class="col-md-12 mb-5">
+            <h2>Alta</h2>
+          </div>
+        </div>
+
+        <div class="row formulario">
+
+          <div class="col-md-6 mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre" formControlName="nombre">
+            <small class="invalid" *ngIf="forma.controls.nombre.errors?.required && forma.controls.nombre.touched">El
+              nombre es requerido</small>
+            <small class="invalid" *ngIf="forma.controls.nombre.errors?.contiene && forma.controls.nombre.touched">Tiene
+              espacios</small>
+          </div>
+
+
+          <div class="col-md-6 mb-3">
+            <label for="descripcion" class="form-label">Descripcion</label>
+            <input type="text" class="form-control" id="descripcion" placeholder="Ingrese descripcion"
+              formControlName="descripcion">
+            <small class="invalid"
+              *ngIf="forma.controls.descripcion.errors?.required && forma.controls.descripcion.touched">El
+              descripcion es requerido</small>
+            <small class="invalid"
+              *ngIf="forma.controls.descripcion.errors?.contiene && forma.controls.descripcion.touched">Tiene
+              espacios</small>
+          </div>
+
+          <div class="col-md-3 mb-3">
+            <label for="dni" class="form-label">Cantidad</label>
+            <input type="number" class="form-control" id="cantidad" placeholder="Ingrese cantidad"
+              formControlName="cantidad">
+            <small class="invalid"
+              *ngIf="forma.controls.cantidad.errors?.max || forma.controls.cantidad.errors?.min && forma.controls.cantidad.touched">cantidad
+              fuera de rango</small>
+            <small class="invalid"
+              *ngIf=" forma.controls.cantidad.errors?.required && forma.controls.cantidad.touched">Se
+              requiere una cantidad
+            </small>
+          </div>
+        </div>
+
+
+        <div class="col-md-12 d-grid gap-2">
+          <button type="submit" class="btn btn-primary btn-block" (click)="addItem()" [disabled]="this.forma.invalid">
+            Aceptar
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</body>
