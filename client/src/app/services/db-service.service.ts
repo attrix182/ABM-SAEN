@@ -10,7 +10,7 @@ export class DbServiceService {
 
   constructor(private http: HttpClient) { }
 
-  API_URI = 'http://192.168.2.176:3000/api';
+  API_URI = 'https://abm-saen.herokuapp.com/api';
 
 
   getitems() {

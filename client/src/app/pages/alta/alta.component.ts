@@ -73,7 +73,7 @@ export class AltaComponent implements OnInit {
 
 
 
-  
+
   alert(icon: SweetAlertIcon, text: string) {
     const Toast = Swal.mixin({
       toast: true,
