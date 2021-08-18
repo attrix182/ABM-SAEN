@@ -24,7 +24,6 @@ export class ListadoComponent implements OnInit {
   }
 
   getItems() {
-
     this.dbService.getitems()
       .subscribe(
         res => {
@@ -47,16 +46,12 @@ export class ListadoComponent implements OnInit {
   }
 
   hacerBusqueda() {
-    
     console.log(this.searchParam)
-
     if (this.searchParam === "") {
       this.items[0] = this.itemsAux[0];
       return;
     }
-
     const serachParamLower = this.searchParam.toLowerCase();
-
     this.items[0] = this.itemsAux[0].filter(item => this.doSearch(item, serachParamLower));
 
   }
@@ -78,11 +73,5 @@ export class ListadoComponent implements OnInit {
 
     return (typeof value == "string" ? value.toLocaleLowerCase() : value.toString()).includes(searcher)
   }
-
-
-test()
-{
-  console.log(this.itemsAux)
-}
 
 }
