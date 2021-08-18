@@ -1,6 +1,9 @@
 # ABM-SAEN
 Control de inventario con SQL + ANGULAR + EXPRESS Y NODE JS
 
+Api Rest desplegada en Heroku y freeDatabe y Frontend en Firebase Hosting
+https://abmsaen.web.app/
+
 ## Descripcion
 
 El proyecto consiste en hacer un ABM (Alta, baja, modificacion), diseñando una API REST con Express, para realizar consultas SQL a una base de datos, del lado del backend, y luego del lado del Frontend utilizar Angular para renderizar una interfaz simple y amigable
