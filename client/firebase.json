@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "./abm-saen",
+    "public": "./dist/controlInventario",
     "ignore": [
       "firebase.json",
       "**/.*",

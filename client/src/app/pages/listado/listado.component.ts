@@ -10,6 +10,7 @@ export class ListadoComponent implements OnInit {
 
   public items: any = [];
   public itemsAux: any = [];
+  public itemsFilter: any = [];
   public searchParam: string = "";
   public result: any[] = [];
 
@@ -20,8 +21,6 @@ export class ListadoComponent implements OnInit {
   ngOnInit(): void {
     this.getItems()
 
-
-
   }
 
   getItems() {
@@ -31,7 +30,7 @@ export class ListadoComponent implements OnInit {
         res => {
           this.items.splice(0, this.items.length)
           this.items.push(res);
-          this.itemsAux = this.items
+          this.itemsAux.push(res);
         },
         err => console.error('no results')
       );
@@ -48,18 +47,17 @@ export class ListadoComponent implements OnInit {
   }
 
   hacerBusqueda() {
-
+    
     console.log(this.searchParam)
 
     if (this.searchParam === "") {
-      this.items = this.itemsAux;
+      this.items[0] = this.itemsAux[0];
       return;
     }
 
     const serachParamLower = this.searchParam.toLowerCase();
 
-    this.items[0] = this.items[0].filter(item => this.doSearch(item, serachParamLower));
-
+    this.items[0] = this.itemsAux[0].filter(item => this.doSearch(item, serachParamLower));
 
   }
 
@@ -82,6 +80,9 @@ export class ListadoComponent implements OnInit {
   }
 
 
-
+test()
+{
+  console.log(this.itemsAux)
+}
 
 }
